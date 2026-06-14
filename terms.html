@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物須知｜歲次丙午 限量純金硬幣紅包典藏 - 公司名稱</title>
+    <meta name="description" content="結合現代高精度工藝，2026丙午年限定純金紅包。訂購前請詳閱購物須知，了解黃金定價與相關細則。">
+    
+    <meta property="og:title" content="購物須知｜公司名稱">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/og-share.png">
+
+    <!-- 提示：明日展示為離線狀態，Tailwind 與 Google Fonts 會使用快取或回退至系統預設字型，排版已做防漂移處理 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #bf953f;
+            --deep-gold: #aa771c;
+            --soft-white: #fcfcfc;
+            --text-main: #2d2d2d;
+            --text-light: #888888;
+        }
+
+        body {
+            /* 離線時，若 Noto Sans 載入失敗，會完美回退至 iPad 系統內建的黑體，確保質感 */
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            
+            /* 全局統一使用 bg-hero.png 作為背景圖，並設定為固定不滾動 (fixed) */
+            background-image: url('assets/img/bg-hero.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 全局背景圖之上疊加一層極淡的白金色半透明遮罩 (88% 透明度)
+           這能讓網頁滑動時，全局背景圖呈現出「高級淡化浮水印」的效果，同時保證所有文字的絕對清晰度 */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: rgba(252, 251, 249, 0.88);
+            pointer-events: none;
+        }
+
+        .serif-font { 
+            font-family: 'Noto Serif TC', "Songti TC", "Georgia", serif; 
+        }
+
+        /* 大理石紋理背景（疊加在全局背景上，增加紙張纖維般的顆粒質感） */
+        .bg-marble {
+            position: relative;
+        }
+        .bg-marble::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 金級按鈕 */
+        .btn-action {
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-gold));
+            color: #fff;
+            box-shadow: 0 10px 20px -10px rgba(191, 149, 63, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(191, 149, 63, 0.6);
+        }
+
+        /* 捲動顯現效果 */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .scroll-reveal.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 導覽列：提高模糊度與背景透光度 */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 glass-header border-b border-stone-200/30">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-widest serif-font">公司名稱 <span class="text-xs font-light block md:inline md:ml-2">HERITAGE GOLD</span></div>
+            <div class="hidden md:flex gap-8 text-sm tracking-widest items-center">
+                <a href="index.html#craft" class="hover:text-amber-700 transition">工藝細節</a>
+                <a href="index.html#order" class="hover:text-amber-700 transition">限量預約</a>
+                <a href="about.html" class="hover:text-amber-700 transition">關於我們</a>
+                <a href="terms.html" class="hover:text-amber-700 transition">購物須知</a>
+            </div>
+            <a href="index.html#order" class="btn-action px-6 py-2 rounded text-xs font-medium uppercase tracking-tighter">立即預約</a>
+        </div>
+    </nav>
+
+    <!-- 頁面主題標題（與首頁風格對齊，採乾淨簡約的白金色微光區塊） -->
+    <section class="relative pt-36 pb-12 px-6">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-block mb-4">
+                <span class="text-xs tracking-[0.5em] text-amber-600 font-bold border-b border-amber-600/30 pb-2">PRE-ORDER TERMS</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl text-stone-800 font-bold serif-font leading-tight tracking-wide">
+                購物須知<br>
+                <span class="text-lg md:text-xl font-medium tracking-[0.2em] text-stone-500 block mt-2">（訂購前請詳閱）</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- 購物須知 雙格卡片區塊
+         完全比照 craft 的精緻卡片風格（高質感 bg-white/90 白金玻璃材質，邊框加細圓角） -->
+    <section class="pb-24 bg-transparent relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- 第一格：黃金與商品價格（文字經專業精品潤飾） -->
+                <div class="bg-white/90 p-10 md:p-12 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active">
+                    <div class="flex items-start gap-5">
+                        <!-- 金色裝飾數字 -->
+                        <div class="serif-font text-3xl font-bold text-amber-600 leading-none">01</div>
+                        <div>
+                            <h2 class="text-2xl mb-6 serif-font text-stone-800 font-bold tracking-tight">
+                                黃金與商品價格
+                            </h2>
+                            <div class="space-y-4 text-stone-600 text-sm leading-relaxed tracking-wide font-light">
+                                <p>
+                                    因應國際黃金原料行情每日波動頻繁，本公司所有純金系列商品之預算及最終銷售價格，將依據<span class="font-bold text-amber-800">當日之最新公告金價</span>進行動態即時微調。
+                                </p>
+                                <p>
+                                    我們會於您正式訂購訂單時為您核算最即時之精準金額。感謝您的理解，我們始終堅持為您提供最透明、最具保值效益與誠信之足金產品價值。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二格：保留空白（預備未來補充內容） -->
+                <div class="bg-white/90 p-10 md:p-12 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active flex items-center justify-center min-h-[300px]">
+                    <div class="text-center py-10">
+                        <div class="h-12 w-12 border border-dashed border-stone-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-stone-400 font-light">+</span>
+                        </div>
+                        <p class="text-xs text-stone-400 tracking-widest uppercase">更多服務條款</p>
+                        <p class="text-[11px] text-stone-300 mt-1">內容整備中，即將推出</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-white/60 backdrop-blur-md pt-20 pb-10 border-t border-stone-200/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
+                <div>
+                    <div class="text-xl font-bold serif-font mb-4">公司名稱</div>
+                    <p class="text-xs text-stone-400 leading-loose">
+                        台北市信義區忠孝東路五十段999號 <br>
+                        營業時間：週一至週六 11:00 - 21:00
+                    </p>
+                </div>
+                <div class="text-left md:text-right">
+                    <p class="text-sm font-medium mb-2">服務專線</p>
+                    <p class="text-2xl serif-font text-amber-800">(02) 2345-6789</p>
+                </div>
+            </div>
+            <div class="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em]">© 2026 Cherish Gold Jewelry. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-[10px] text-stone-400 hover:text-amber-700">隱私權政策</a>
+                    <a href="#" class="text-[10px] text-stone-400 hover:text-amber-700">防詐騙聲明</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const App = {
+            init() {
+                this.setupRevealAnimation();
+                console.log('Notice Page Initialized - Match Brand Visual');
+            },
+
+            setupRevealAnimation() {
+                const revealSettings = {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, revealSettings);
+
+                document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => App.init());
+    </script>
+</body>
+</html>
