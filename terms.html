@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>購物須知｜歲次丙午 限量純金硬幣紅包典藏 - 公司名稱</title>
-    <meta name="description" content="結合現代高精度工藝，2026丙午年限定純金紅包。訂購前請詳閱購物須知，了解黃金定價與相關細則。">
+    <title>惜金 SHIJIN｜黃金精品、純金飾品</title>
+    <meta name="description" content="惜不只是珍惜黃金，更是疼惜感情。惜金 SHIJIN 致力於將真摯心意與得來不易的緣分，凝聚為永恆純金，為每段故事留下最溫柔長久的陪伴。">
     
-    <meta property="og:title" content="購物須知｜公司名稱">
+    <meta property="og:title" content="惜金 SHIJIN｜黃金精品、純金飾品">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/img/og-share.png">
+    <meta property="og:image" content="assets/img/product-goldbeans.jpg">
 
     <!-- 提示：明日展示為離線狀態，Tailwind 與 Google Fonts 會使用快取或回退至系統預設字型，排版已做防漂移處理 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght=400;700&family=Noto+Sans+TC:wght=300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -24,7 +24,6 @@
         }
 
         body {
-            /* 離線時，若 Noto Sans 載入失敗，會完美回退至 iPad 系統內建的黑體，確保質感 */
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: var(--text-main);
             -webkit-font-smoothing: antialiased;
@@ -38,8 +37,7 @@
             background-repeat: no-repeat;
         }
 
-        /* 全局背景圖之上疊加一層極淡的白金色半透明遮罩 (88% 透明度)
-           這能讓網頁滑動時，全局背景圖呈現出「高級淡化浮水印」的效果，同時保證所有文字的絕對清晰度 */
+        /* 全局背景圖之上疊加一層極淡的白金色半透明遮罩 */
         body::before {
             content: "";
             position: fixed;
@@ -67,8 +65,27 @@
             z-index: 1;
         }
 
+        /* 首頁主視覺區塊 */
+        .hero-bg-image {
+            position: relative;
+            background-image: url('assets/img/bg-hero.png') !important;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 10;
+        }
+
+        /* 首頁微光白色遮罩 */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.12);
+            z-index: 1;
+            pointer-events: none;
+        }
+
         .gold-gradient-text {
-            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 100%);
+            background: linear-gradient(135deg, #aa771c 0%, #d4af37 40%, #8a5a00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -77,30 +94,30 @@
         .btn-action {
             background: linear-gradient(135deg, var(--primary-gold), var(--deep-gold));
             color: #fff;
-            box-shadow: 0 10px 20px -10px rgba(191, 149, 63, 0.5);
+            box-shadow: 0 10px 20px -10 rgba(191, 149, 63, 0.5);
             transition: all 0.3s ease;
         }
         .btn-action:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px -10px rgba(191, 149, 63, 0.6);
         }
-
-        /* 捲動顯現效果 */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .scroll-reveal.is-active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* 導覽列：提高模糊度與背景透光度 */
         .glass-header {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* 解決下拉選單滑鼠移開即消失之問題 */
+        .dropdown-container::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: transparent;
+            z-index: 40;
         }
     </style>
 </head>
@@ -108,17 +125,36 @@
 
     <!-- 導覽列 -->
     <nav class="fixed w-full z-50 glass-header border-b border-stone-200/30">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-widest serif-font">公司名稱 <span class="text-xs font-light block md:inline md:ml-2">HERITAGE GOLD</span></div>
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">            
+            <a href="index.html" class="text-xl font-bold tracking-widest serif-font text-amber-600 hover:opacity-80 hover:scale-[0.98] transition-all duration-300 block">
+                惜金<span class="text-xs font-light block md:inline md:ml-2 text-amber-600">SHIJIN</span>
+            </a>
+            
             <div class="hidden md:flex gap-8 text-sm tracking-widest items-center">
-                <a href="index.html#craft" class="hover:text-amber-700 transition">工藝細節</a>
-                <a href="index.html#order" class="hover:text-amber-700 transition">限量預約</a>
+                <a href="index.html#order" class="hover:text-amber-700 transition">精選商品</a>
                 <a href="about.html" class="hover:text-amber-700 transition">關於我們</a>
-                <a href="terms.html" class="hover:text-amber-700 transition">購物須知</a>
+                
+                <!-- 專業級下拉式選單 (對標東方不敗官網架構) -->
+                <div class="relative group dropdown-container">
+                    <button type="button" id="dropdown-btn" class="flex items-center gap-1.5 hover:text-amber-700 transition focus:outline-none py-2 font-medium">
+                        <span>購物須知</span>
+                        <!-- 旋轉箭頭 -->
+                        <svg class="w-3 h-3 text-stone-400 group-hover:text-amber-700 transition-transform duration-300 transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <!-- 下拉卡片：支援 Hover (PC端) 與 Tap (觸控端) -->
+                    <div id="dropdown-menu" class="absolute left-1/2 -translate-x-1/2 mt-1 w-40 bg-white/95 backdrop-blur-md border border-stone-200/40 rounded shadow-xl py-2 hidden md:group-hover:block transition-all duration-200 z-50">
+                        <a href="terms.html" class="block px-4 py-2.5 text-xs text-stone-700 hover:text-amber-700 hover:bg-stone-50/50 transition tracking-wider font-medium">購物須知</a>
+                        <a href="shipping.html" class="block px-4 py-2.5 text-xs text-stone-700 hover:text-amber-700 hover:bg-stone-50/50 transition border-t border-stone-100 tracking-wider font-medium">出貨流程</a>
+                    </div>
+                </div>
             </div>
-            <a href="index.html#order" class="btn-action px-6 py-2 rounded text-xs font-medium uppercase tracking-tighter">立即預約</a>
+            
+            <a href="index.html#order" class="btn-action px-6 py-2 rounded text-xs font-medium uppercase tracking-tighter">立即訂購</a>
         </div>
     </nav>
+
 
     <!-- 頁面主題標題（與首頁風格對齊，採乾淨簡約的白金色微光區塊） -->
     <section class="relative pt-36 pb-12 px-6">
@@ -133,19 +169,19 @@
         </div>
     </section>
 
-    <!-- 購物須知 雙格卡片區塊
+    <!-- 購物須知 三格卡片區塊
          完全比照 craft 的精緻卡片風格（高質感 bg-white/90 白金玻璃材質，邊框加細圓角） -->
     <section class="pb-24 bg-transparent relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
                 <!-- 第一格：黃金與商品價格（文字經專業精品潤飾） -->
-                <div class="bg-white/90 p-10 md:p-12 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active">
+                <div class="bg-white/90 p-8 md:p-10 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active flex flex-col justify-between">
                     <div class="flex items-start gap-5">
                         <!-- 金色裝飾數字 -->
                         <div class="serif-font text-3xl font-bold text-amber-600 leading-none">01</div>
                         <div>
-                            <h2 class="text-2xl mb-6 serif-font text-stone-800 font-bold tracking-tight">
+                            <h2 class="text-xl mb-5 serif-font text-stone-800 font-bold tracking-tight">
                                 黃金與商品價格
                             </h2>
                             <div class="space-y-4 text-stone-600 text-sm leading-relaxed tracking-wide font-light">
@@ -160,14 +196,45 @@
                     </div>
                 </div>
 
-                <!-- 第二格：保留空白（預備未來補充內容） -->
-                <div class="bg-white/90 p-10 md:p-12 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active flex items-center justify-center min-h-[300px]">
-                    <div class="text-center py-10">
-                        <div class="h-12 w-12 border border-dashed border-stone-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-stone-400 font-light">+</span>
+                <!-- 第二格：9999足金與交易規範 -->
+                <div class="bg-white/90 p-8 md:p-10 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active flex flex-col justify-between">
+                    <div class="flex items-start gap-5">
+                        <!-- 金色裝飾數字 -->
+                        <div class="serif-font text-3xl font-bold text-amber-600 leading-none">02</div>
+                        <div>
+                            <h2 class="text-xl mb-5 serif-font text-stone-800 font-bold tracking-tight">
+                                產品品質與交易規範
+                            </h2>
+                            <div class="space-y-4 text-stone-600 text-sm leading-relaxed tracking-wide font-light">
+                                <p>
+                                    惜金 SHIJIN 所售之黃金精品皆採用<span class="font-bold text-amber-800">國家標準 9999 萬足真金</span>精心打造，成色純正，並附實體保證卡，確保卓越的珍藏與保值功能。
+                                </p>
+                                <p>
+                                    為維護預約訂購之排序與貴重金屬交易之高額安全性，商品皆採限量預約制，<span class="font-bold text-amber-800">下單前請務必先完成匯款</span>。我們將於確認款項後第一時間為您保留並安排後續出貨。
+                                </p>
+                            </div>
                         </div>
-                        <p class="text-xs text-stone-400 tracking-widest uppercase">更多服務條款</p>
-                        <p class="text-[11px] text-stone-300 mt-1">內容整備中，即將推出</p>
+                    </div>
+                </div>
+
+                <!-- 第三格：唯一官方渠道防詐聲明 -->
+                <div class="bg-white/90 p-8 md:p-10 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal is-active flex flex-col justify-between">
+                    <div class="flex items-start gap-5">
+                        <!-- 金色裝飾數字 -->
+                        <div class="serif-font text-3xl font-bold text-amber-600 leading-none">03</div>
+                        <div>
+                            <h2 class="text-xl mb-5 serif-font text-stone-800 font-bold tracking-tight">
+                                唯一官方渠道防詐聲明
+                            </h2>
+                            <div class="space-y-4 text-stone-600 text-sm leading-relaxed tracking-wide font-light">
+                                <p>
+                                    惜金僅透過唯一官方網站（<span class="font-bold text-amber-800">shijin.tw</span>）與指定的官方 LINE 渠道展示及交易。本品牌目前並無任何相關外部品牌、經銷商或代理銷售夥伴。
+                                </p>
+                                <p>
+                                    凡非經由本站官方管道銷售之商品皆屬不實仿冒。請顧客務必提高警覺、認明官方管道，切勿輕信不明網頁與非官方銷售，以確保交易權益與財產安全。
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -175,24 +242,45 @@
         </div>
     </section>
 
+
     <!-- 頁尾 -->
     <footer class="bg-white/60 backdrop-blur-md pt-20 pb-10 border-t border-stone-200/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
                 <div>
-                    <div class="text-xl font-bold serif-font mb-4">公司名稱</div>
+                    <!-- 頁尾品牌字型顏色同步改為 LUNAR NEW YEAR 專屬色 -->
+                    <div class="text-xl font-bold serif-font mb-4 text-amber-600">惜金 SHIJIN</div>
                     <p class="text-xs text-stone-400 leading-loose">
-                        台北市信義區忠孝東路五十段999號 <br>
-                        營業時間：週一至週六 11:00 - 21:00
+                        店面籌備中敬請期待 <br>
+                        營業時間：
                     </p>
                 </div>
                 <div class="text-left md:text-right">
-                    <p class="text-sm font-medium mb-2">服務專線</p>
-                    <p class="text-2xl serif-font text-amber-800">(02) 2345-6789</p>
+                    <p class="text-sm font-medium mb-3 text-stone-700 tracking-wider">聯絡我們</p>
+                    <div class="flex items-center gap-3 justify-start md:justify-end">
+                        <!-- LINE@ 官方帳號 -->
+                        <a href="https://line.me/R/ti/p/@479lahom" target="_blank" class="group flex items-center justify-center w-10 h-10 rounded-full border border-stone-200/50 bg-white/40 hover:bg-white hover:border-amber-600 hover:scale-105 shadow-sm transition-all duration-300" title="LINE 官方帳號">
+                            <svg class="w-5 h-5 fill-stone-500 group-hover:fill-amber-700 transition-colors duration-300" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.9 10.43c0-4.6-4.44-8.33-9.9-8.33S2.1 5.83 2.1 10.43c0 4.12 3.53 7.57 8.3 8.21.32.07.76.22.88.51.1.25.07.64.03.89l-.17 1c-.05.32-.24 1.25 1.04.68 1.28-.57 6.91-4.07 7.82-5.78 1.21-2.02 1.9-4.32 1.9-6.53z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram 官方帳號 -->
+                        <a href="https://instagram.com" target="_blank" class="group flex items-center justify-center w-10 h-10 rounded-full border border-stone-200/50 bg-white/40 hover:bg-white hover:border-amber-600 hover:scale-105 shadow-sm transition-all duration-300" title="Instagram">
+                            <svg class="w-5 h-5 fill-stone-500 group-hover:fill-amber-700 transition-colors duration-300" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324z" />
+                            </svg>
+                        </a>
+                        <!-- 官方 Email -->
+                        <a href="mailto:service@shijin.tw" class="group flex items-center justify-center w-10 h-10 rounded-full border border-stone-200/50 bg-white/40 hover:bg-white hover:border-amber-600 hover:scale-105 shadow-sm transition-all duration-300" title="聯絡信箱">
+                            <svg class="w-5 h-5 fill-stone-500 group-hover:fill-amber-700 transition-colors duration-300" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em]">© 2026 Cherish Gold Jewelry. All Rights Reserved.</p>
+                <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em]">© 2026 Shijin Gold Jewelry. All Rights Reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="text-[10px] text-stone-400 hover:text-amber-700">隱私權政策</a>
                     <a href="#" class="text-[10px] text-stone-400 hover:text-amber-700">防詐騙聲明</a>
@@ -201,11 +289,33 @@
         </div>
     </footer>
 
+    <!-- 商品放大鏡彈出燈箱 (Lightbox Modal) -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-stone-950/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <!-- 背景半透明點擊關閉層 -->
+        <div class="absolute inset-0 cursor-zoom-out" id="lightbox-backdrop"></div>
+        
+        <div class="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center z-10">
+            <!-- 關閉按鈕 -->
+            <button id="lightbox-close" class="absolute -top-14 right-0 md:right-4 text-white/70 hover:text-white transition duration-300 focus:outline-none" aria-label="Close Lightbox">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <!-- 燈箱圖片主體 -->
+            <img id="lightbox-image" src="" alt="9999足金小金豆 完整大圖" class="max-w-full max-h-[80vh] object-contain rounded shadow-2xl scale-95 transition-all duration-300 opacity-0 border border-white/10">
+            <!-- 底端說明 -->
+            <p class="text-xs text-stone-400 mt-4 tracking-widest uppercase font-light">9999 Pure Gold Beans • 完美實物細節</p>
+        </div>
+    </div>
+
     <script>
         const App = {
             init() {
                 this.setupRevealAnimation();
-                console.log('Notice Page Initialized - Match Brand Visual');
+                this.setupSmoothScroll();
+                this.setupLightbox();
+                this.setupDropdown();
+                console.log('Site Core Initialized - Lightbox & Nav Dropdown Enabled');
             },
 
             setupRevealAnimation() {
@@ -224,6 +334,101 @@
                 }, revealSettings);
 
                 document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+            },
+
+            setupSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        const targetID = anchor.getAttribute('href');
+                        const targetElement = document.querySelector(targetID);
+                        
+                        if (targetElement) {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            },
+
+            /* 燈箱放大鏡控制邏輯 */
+            setupLightbox() {
+                const triggerCard = document.getElementById('product-img-card');
+                const modal = document.getElementById('lightbox-modal');
+                const modalImg = document.getElementById('lightbox-image');
+                const closeBtn = document.getElementById('lightbox-close');
+                const backdrop = document.getElementById('lightbox-backdrop');
+
+                const openModal = () => {
+                    // 指向完整商品大圖
+                    modalImg.src = 'assets/img/product-goldbeans-full.jpg';
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    
+                    // 稍待瀏覽器渲染完成後，滑入縮放
+                    setTimeout(() => {
+                        modalImg.classList.remove('opacity-0', 'scale-95');
+                        modalImg.classList.add('scale-100');
+                    }, 50);
+
+                    // 鎖定主頁面背景滾動
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeModal = () => {
+                    modalImg.classList.add('opacity-0', 'scale-95');
+                    modalImg.classList.remove('scale-100');
+                    
+                    setTimeout(() => {
+                        modal.classList.add('opacity-0', 'pointer-events-none');
+                        document.body.style.overflow = '';
+                        modalImg.src = ''; // 釋放記憶體暫存
+                    }, 300);
+                };
+
+                if (triggerCard) triggerCard.addEventListener('click', openModal);
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                if (backdrop) backdrop.addEventListener('click', closeModal);
+
+                // 支援 ESC 鍵快速關閉
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
+                        closeModal();
+                    }
+                });
+            },
+
+            /* 下拉式選單控制邏輯 (支援 PC Hover & 觸控 Tap 雙重模式) */
+            setupDropdown() {
+                const btn = document.getElementById('dropdown-btn');
+                const menu = document.getElementById('dropdown-menu');
+                const icon = btn.querySelector('svg');
+
+                if (btn && menu) {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // 阻止事件冒泡到 document
+                        const isHidden = menu.classList.contains('hidden');
+                        if (isHidden) {
+                            menu.classList.remove('hidden');
+                            icon.classList.add('rotate-180');
+                        } else {
+                            menu.classList.add('hidden');
+                            icon.classList.remove('rotate-180');
+                        }
+                    });
+
+                    // 點擊網頁外部任意地方，自動收合下拉選單
+                    document.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                        icon.classList.remove('rotate-180');
+                    });
+
+                    // 阻止下拉選單內部的點擊將選單收合
+                    menu.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
+                }
             }
         };
 
