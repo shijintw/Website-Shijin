@@ -350,6 +350,58 @@
                     </div>
                 </div>
 
+                <!-- 第三件精選商品：客製化商品 -->
+                <div class="bg-white/90 p-10 md:p-16 border border-stone-200/40 rounded-sm shadow-xl backdrop-blur-md scroll-reveal">
+                    <div class="flex flex-col lg:flex-row items-center gap-16">
+                        
+                        <!-- 左側欄：客製化 精緻大圖 -->
+                        <div class="w-full lg:w-1/2">
+                            <!-- 💡 智慧升級：加入 data-full-src 屬性，指向路徑 -->
+                            <div class="product-img-card relative p-2 bg-stone-50/80 border border-stone-100 shadow-sm rounded-sm cursor-zoom-in group/img overflow-hidden" data-full-src="assets/img/product-goldrose-full.jpg">
+                                <img src="assets/img/product-customization.jpg" alt="黃金玫瑰花" class="w-full grayscale-[20%] hover:grayscale-0 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';">
+                                
+                                <!-- 取消放大圖 -->
+                                
+
+                                <!-- 品牌左下標誌 -->
+                                <div class="absolute -bottom-4 -left-4 bg-white p-6 shadow-xl border-t-2 border-amber-500 z-10 pointer-events-none">
+                                    <p class="text-sm text-stone-800">客製化商品</p>
+                                    <p class="text-xs text-stone-400 uppercase tracking-widest mt-1">Customization</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 右側欄：規格、售價、LINE 立即訂購 -->
+                        <div class="w-full lg:w-1/2 text-left flex flex-col justify-between">
+                            <div>
+                                <span class="text-amber-600 text-sm block mb-3 font-sans font-bold uppercase tracking-widest">Customization</span>
+                                
+                                <!-- 金價每日修改與立即訂購按鈕整合區塊（價格也同步由 price.json 動態算出） -->
+                                <div class="mb-6 border-b border-stone-100 pb-6">
+                                    <h2 class="text-5xl font-bold gold-gradient-text serif-font tracking-tighter whitespace-nowrap">
+                                        客製化商品 <span id="daily-gold-price"> </span>
+                                    </h2>
+                                    <p class="text-[11px] text-stone-400 mt-2 tracking-wider">-<span id="update-date"></span></p>
+                                </div>
+
+                                <!-- 立即訂購按鈕 -->
+                                <div class="mb-8">
+                                    <a href="https://line.me/R/ti/p/@479lahom" target="_blank" class="btn-action block w-full py-5 rounded font-bold text-lg tracking-widest text-center shadow-md">
+                                        聯絡我們
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- 配送付款方式 -->
+                            <div class="mt-4 grid grid-cols-2 gap-2 border-t border-stone-100 pt-6">
+                                <div class="text-xs text-stone-500 uppercase tracking-widest text-center py-2 font-medium">實體店取</div>
+                                <div class="text-xs text-stone-500 uppercase tracking-widest text-center border-l border-stone-200 py-2 font-medium">匯款支付</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
 
         </div>
